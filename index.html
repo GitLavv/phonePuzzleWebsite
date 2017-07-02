@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+<title>Phone Puzzle Helper</title>
+<meta name="viewport" content="width=device-width, initial-scale=1 " />
+<style>
+* {
+    font-family: Arial;
+}
+body {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	color: #c60303;
+	text-shadow: 1px 1px 4px #666;
+}
+
+.wrapper {
+	width: 320px;
+	height: 500px;
+	margin: auto;
+}
+
+button {
+  display: inline-block;
+  padding: 8px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #c60303;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px #999;
+}
+button:hover {background-color: #7a0303}
+button:active {
+  background-color: #7a0303;
+  box-shadow: 0 1px #666;
+  transform: translateY(4px);
+}
+</style>
+<script type="text/javascript">
+function test()
+{
+alert("test worked");
+}
+
+function calculate()
+{
+  var numbers = document.getElementById("numbers").value.split('');
+  var output = document.getElementById("outputText");
+  output.innerHTML = "";
+  for (var i = 0, len = numbers.length; i < len; i++) {
+  numToLetters(parseInt(numbers[i]));
+}
+}
+
+function numToLetters(item, index)
+{
+  var output = document.getElementById("outputText");
+  switch(item) {
+    case 2:
+        var text = "A, B, C <br>";
+        break;
+    case 3:
+        var text = "D, E, F <br>";
+        break;
+    case 4:
+        var text = "G, H, I <br>";
+        break;
+    case 5:
+        var text = "J, K, L <br>";
+        break;
+    case 6:
+        var text = "M, N, O <br>";
+        break;
+    case 7:
+        var text = "P, Q, R, S <br>";
+        break;
+    case 8:
+        var text = "T, U, V <br>";
+        break;
+    case 9:
+        var text = "W, X, Y, Z <br>";
+        break;
+    default:
+        var text = item + " is not a number between 2-9 <br>"
+      }
+  output.innerHTML = output.innerHTML + text;
+}
+</script>
+</head>
+<body>
+<div class="wrapper">
+<h1>Phone Puzzle Helper</h1>
+<p>Please enter the numbers you want to get the letters for.</p>
+<input type="number" id="numbers"></input>
+<br>
+<br>
+<button id="submitButton" onclick="calculate()">Get Letters</button>
+<br>
+<br>
+<h3 id="outputText"></h3>
+</div>
+</body>
+</html>
