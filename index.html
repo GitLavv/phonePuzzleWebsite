@@ -18,7 +18,7 @@ h1 {
 }
 
 .wrapper {
-	width: 320px;
+	width: 400px;
 	height: 500px;
 	margin: auto;
 }
@@ -43,6 +43,15 @@ button:active {
   box-shadow: 0 1px #666;
   transform: translateY(4px);
 }
+
+table {
+    border-collapse: collapse;
+}
+
+table, td {
+    border: 1px solid black;
+    padding: 15px;
+}
 </style>
 <script type="text/javascript">
 function test()
@@ -65,31 +74,31 @@ function numToLetters(item, index)
   var output = document.getElementById("outputText");
   switch(item) {
     case 2:
-        var text = "A, B, C <br>";
+        var text = "<td>A, B, C</td>";
         break;
     case 3:
-        var text = "D, E, F <br>";
+        var text = "<td>D, E, F</td>";
         break;
     case 4:
-        var text = "G, H, I <br>";
+        var text = "<td>G, H, I</td>";
         break;
     case 5:
-        var text = "J, K, L <br>";
+        var text = "<td>J, K, L</td>";
         break;
     case 6:
-        var text = "M, N, O <br>";
+        var text = "<td>M, N, O</td>";
         break;
     case 7:
-        var text = "P, Q, R, S <br>";
+        var text = "<td>P, Q, R, S</td>";
         break;
     case 8:
-        var text = "T, U, V <br>";
+        var text = "<td>T, U, V</td>";
         break;
     case 9:
-        var text = "W, X, Y, Z <br>";
+        var text = "<td>W, X, Y, Z</td>";
         break;
     default:
-        var text = item + " is not a number between 2-9 <br>"
+        var text = item + "<td>is not a number between 2-9</td>"
       }
   output.innerHTML = output.innerHTML + text;
 }
@@ -105,7 +114,10 @@ function numToLetters(item, index)
 <button id="submitButton" onclick="calculate()">Get Letters</button>
 <br>
 <br>
-<h3 id="outputText"></h3>
+<table>
+<tr id="outputText">
+</tr>
+</table>
 </div>
 </body>
 </html>
